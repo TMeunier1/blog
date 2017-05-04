@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Liste des articles
+{% endblock %}
+
+{% block content %}
+<h1>Liste des articles</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="/post/{{post.id}}">[{{ post.creation_date }}] {{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
