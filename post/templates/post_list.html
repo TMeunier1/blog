@@ -8,7 +8,7 @@ Liste des articles
 <ul>
     {% for post in posts %}
     <li>
-        <a href="/post/{{post.id}}">[{{ post.creation_date }}] {{ post.title }}</a>
+        <a href="/post/{{post.slug}}">[{{ post.creation_date }}] {{ post.title }}</a>
     </li>
     {% endfor %}
 </ul>

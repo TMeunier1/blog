@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- codipost/ng: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.shortcuts import render
@@ -16,8 +16,8 @@ def post_list(request):
     }
     return render(request, "post_list.html", context)
 
-def post_detail(request, post_id):
-    post = Post.objects.get(id=post_id)
+def post_detail(request, post_slug):
+    post = Post.objects.get(slug=post_slug)
     context = {
         'post': post
     }
