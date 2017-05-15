@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'djangobower',
+    'sass_processor',
 
     'post',
 ]
@@ -123,23 +124,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 
 STATICFILES_FINDERS = [
    'django.contrib.staticfiles.finders.FileSystemFinder',
    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
    'djangobower.finders.BowerFinder',
+   'sass_processor.finders.CssFinder',
 ]
 
 BOWER_INSTALLED_APPS = (
    'jquery',
    'bootstrap',
-   'fontawesome'
+   'fontawesome',
 )
+
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_URL = '/static/'
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, "post", "static", "sass")
+]
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-   os.path.join(BASE_DIR, 'blog', "static"),
+   os.path.join(BASE_DIR, 'blog', "static", "sass"),
 ]

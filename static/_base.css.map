@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "../home/tibau/Code/blog-env/blog/blog/static/sass/_base.css",
+	"sources": [
+		"../home/tibau/Code/blog-env/blog/blog/static/sass/_base.scss",
+		"../home/tibau/Code/blog-env/blog/post/static/sass/_homepage.scss"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,IAAI,CAAC;EACD,gBAAgB,EAAE,IAAI,GACzB"
+}
