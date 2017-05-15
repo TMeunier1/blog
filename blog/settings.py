@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
-    'sass_processor',
+    'djangobower',
 
     'post',
 ]
@@ -124,10 +124,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "blog", "static")
+STATICFILES_FINDERS = [
+   'django.contrib.staticfiles.finders.FileSystemFinder',
+   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+   'djangobower.finders.BowerFinder',
 ]
 
-SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(PROJECT_PATH, 'blog', 'static', 'sass'),
+BOWER_INSTALLED_APPS = (
+   'jquery',
+   'bootstrap',
+   'fontawesome'
+)
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, "static"),
+   os.path.join(BASE_DIR, 'blog', "static"),
 ]
